@@ -15,23 +15,13 @@ const duplicateHtml = (element, quantity) => {
 duplicateHtml(document.querySelector('.svg-images'), 150)
 
 // NOW we do stuff
-// for each of the 150 svgs
-document.querySelectorAll("svg").forEach(svg => {
-  // add an event on click
-  svg.addEventListener("click", function () {
-    
-    // for THAT SVG
-    // find the image tag in there and set opacity to 0
-    // note: this is an <image> tag due to being in a SVG, not <img> which is HTML
-    this.querySelector("image").style.opacity = 0
-    
-    // find the rect at the bottom of the SVG and make it visible
-    this.querySelector("rect").style.opacity = 1
+// // for each of the 150 svgs
+function burst(){
+  document.querySelectorAll("img").forEach(img => {
+    // add an event on click
+    img.addEventListener("click", function () {
+      var number = Math.floor(Math.random() * 2);
+      this.src = `assets/images/Bubble${number}.png`
+    })
   })
-})
-
-
-
-
-
-
+}
